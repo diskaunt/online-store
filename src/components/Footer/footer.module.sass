@@ -1,0 +1,139 @@
+@import '../../shared/_styles.sass'
+
+.contentWrapper
+	width: full
+	padding: 96px 10px 36px
+
+.content
+	max-width: 320px
+	display: grid
+	grid-template: repeat(2,auto) / repeat(2,auto)
+	margin: auto
+	row-gap: 44px
+	@include text16px
+	text-transform: uppercase
+
+.nav
+	display: flex
+	flex-flow: column wrap
+	width: 97px
+	row-gap: 11px
+
+.navTitle
+	width: 100%
+	display: flex
+	align-items: center
+	justify-content: space-between
+	text-transform: uppercase
+	text-align: start
+	& > span
+		justify-self: start
+	& > svg
+		flex-shrink: 0
+		width: 11px
+		height: 11px
+		transform: rotate(0deg)
+		transition: transform 0.3s ease-in-out
+
+.navItems
+	display: none
+	text-decoration: none
+	@include text12px
+
+.active .navTitle > svg
+	transform: rotate(45deg)
+
+.active .navItems
+	display: block
+	display: flex
+	flex-flow: column nowrap
+	gap: 3px
+	margin-top: 20px
+
+.info
+	display: flex
+	flex-flow: column nowrap
+	gap: 53px
+	width: min-content
+	justify-self: end
+
+.newsletter
+	width: 140px
+	& label
+		display: block
+		margin-bottom: 10px
+	& input
+		width: inherit
+		height: 24px
+		border: none
+		border-bottom: 1px solid var(--black-white-50)
+		background-color: transparent
+		@include text12px
+
+.socialLinks
+	justify-content: end
+	gap: 20px
+
+.metaInfo
+	width: 100%
+	display: flex
+	justify-content: space-between
+	grid-column: span 2
+	text-transform: none
+	@include text12px
+
+@media ( min-width: 640px )
+	.contentWrapper
+		padding: 116px 13px 36px 20px
+
+	.content
+		max-width: 640px
+		row-gap: 10px
+
+	.nav
+		width: 160px
+		grid-row: span 2
+		row-gap: 17px
+
+	.infoSection
+		justify-self: start
+		gap: 16px
+
+	.newsletter
+		width: 280px
+
+	.socialLinks
+		justify-content: start
+		gap: 24px
+
+	.metaInfo
+		width: 280px
+		margin-left: auto
+		grid-column: span 1
+
+@media ( min-width: 1024px )
+	.contentWrapper
+		padding: 116px 13px 36px 20px
+
+	.content
+		max-width: 640px
+		row-gap: 10px
+
+	.nav
+		width: 160px
+		grid-row: span 2
+		row-gap: 17px
+
+	.infoSection
+		justify-self: start
+		gap: 16px
+
+	.newsletter
+		width: 280px
+
+	.socialLinks
+		justify-content: start
+		gap: 24px
+
+	.metaInfo
+		grid-column: span 1

@@ -1,0 +1,107 @@
+@import '../../shared/styles'
+
+$gap: 17px
+
+.header
+	border-bottom: 1px solid var(--black-25)
+
+.contentWrapper
+	max-width: 320px
+	width: full
+	margin: auto
+	display: flex
+	justify-content: space-between
+	padding: 10px
+	text-transform: uppercase
+	overflow: hidden
+
+.logo
+	margin-left: 55px
+	width: 40px
+	height: 40px
+
+.burger
+	width: 30px
+	align-items: center
+
+.navList
+	display: none
+
+.utilityMenuList
+	align-items: center
+	gap: $gap
+
+.utilityMenuItem:first-child, .utilityMenuItem:nth-child(4)
+	display: none
+
+.utilityMenuItem
+	cursor: pointer
+
+	span
+		display: none
+
+@media ( min-width:	640px )
+	$gap: 27px
+	.contentWrapper
+		max-width: 640px
+		padding: 20px
+
+	.logo
+		margin-left: 115px
+
+	.burger
+		width: 40px
+
+	.utilityMenuList
+		gap: $gap
+
+	.utilityMenuItem:nth-child(4)
+		display: block
+
+@media (min-width: 1024px)
+	$gap: 40px
+	.contentWrapper
+		max-width: 1024px
+
+	.logo
+		order: -1
+		margin-left: 0
+
+	.burger
+		display: none
+
+	.nav
+		margin-right: auto
+		margin-left: 70px
+
+	.navList
+		display: flex
+		align-items: center
+		gap: $gap
+
+	.utilityMenuList
+		gap: $gap
+
+	.utilityMenuItem
+		& span
+			display: block
+		& svg
+			display: none
+
+@media (min-width: 1600px)
+	$gap: 40px
+	.contentWrapper
+		max-width: 1600px
+		padding: 20px
+
+	.logo
+		margin-right: 69px
+
+	.navList
+		display: flex
+		align-items: center
+		gap: $gap
+
+	.utilityMenuList
+		align-items: center
+		gap: $gap
