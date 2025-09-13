@@ -1,0 +1,157 @@
+@import './../../shared/_styles'
+
+.content
+	width: 320px
+	display: grid
+	margin: 0 auto
+	grid-template-columns: repeat(2, 50%)
+
+.title
+	grid-column: span 2
+	@include text20px
+	padding: 17px 9px
+	border-bottom: 1px solid var(--black-25)
+
+.card
+	width: 100%
+	height: 220px
+	display: flex
+	flex-direction: column
+	align-items: center
+	border-bottom: 1px solid var(--black-25)
+
+	&:nth-child(2n)
+		justify-self: end
+		border-right: 1px solid var(--black-25)
+
+.imageWrapper
+	margin: 7px 7.5px 0
+	width: 145px
+	height: 182px
+	overflow: hidden
+
+.image
+	width: 100%
+	height: auto
+	object-fit: cover
+	object-position: center center
+
+.descr
+	display: flex
+	width: 140px
+	flex-grow: 1
+	justify-content: space-between
+	align-items: end
+	margin: 0 10px 7px
+	text-transform: uppercase
+
+.name
+	max-width: 81px
+	@include text10px
+
+.models
+	@include text7px
+
+@media ( min-width: 640px )
+	.content
+		width: 640px
+
+	.title
+		grid-column: span 1
+		margin-top: -4px
+		padding: 0 19px
+		border-right: 1px solid var(--black-25)
+		@include MobHeadline2
+
+	.card
+		height: 430px
+
+		&:nth-child(n)
+			border-right: 1px solid var(--black-25)
+
+		&:nth-child(2n)
+			border-right: none
+
+	.imageWrapper
+		margin: 13px 20px 0
+		width: 280px
+		height: 357px
+
+	.descr
+		margin: 0 0 16px
+		width: 280px
+
+	.name
+		max-width: 162px
+		@include text20px
+
+	.models
+		@include text16px
+
+@media (min-width: 1024px)
+	.content
+		width: 1024px
+		grid-template-columns: repeat(3, 33.33%)
+
+	.title
+		margin-top: -7px
+		padding: 0 18px
+		@include Headline2
+
+	.card
+		height: 460px
+
+		&:nth-child(n)
+			border-right: 1px solid var(--black-25)
+
+		&:nth-child(3n)
+			border-right: none
+
+	.imageWrapper
+		margin: 13px 21px 0
+		width: 298px
+		height: 387px
+
+	.descr
+		margin: 0 0 16px
+		width: 300px
+
+	.name
+		max-width: 163px
+		@include text20px
+
+	.models
+		@include text12px
+
+@media (min-width: 1600px)
+	.content
+		width: 1600px
+		grid-template-columns: repeat(4, 25%)
+
+	.title
+		margin-top: -7.5px
+
+	.card
+		height: 560px
+
+		&:nth-child(n)
+			border-right: 1px solid var(--black-25)
+
+		&:nth-child(4n)
+			border-right: none
+
+	.imageWrapper
+		margin: 16px 25px 28px
+		width: 350px
+		height: 456px
+
+	.descr
+		margin: 0 0 16.5px
+		width: 361px
+
+	.name
+		max-width: 166px
+		@include text20px
+
+	.models
+		@include text12px

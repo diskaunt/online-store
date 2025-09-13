@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { Arimo } from 'next/font/google';
 import './globals.sass';
-import Header from '../components/Header/Header';
-import Footer from '@/components/Footer/Footer';
+import Header from '../widgets/Header/Header';
+import Footer from '@/widgets/Footer/Footer';
+import classNames from 'classnames';
+import styles from './page.module.sass'
 
 const arimo = Arimo({
   subsets: ['latin'],
@@ -21,10 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className={arimo.className}>
-      <body>
-        <Header />
-        {children}
-        <Footer />
+      <body cz-shortcut-listen='true'>
+        <div className={classNames(styles.contetnt)}>
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

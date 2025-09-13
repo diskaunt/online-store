@@ -1,25 +1,39 @@
 import React from 'react';
-import style from './footer.module.sass';
+import styles from './footer.module.sass';
 import classNames from 'classnames';
-import NavSection from './Nav';
+import Nav from './ui/Nav';
 
 const Footer = () => {
   return (
-    <footer className={classNames(style.contentWrapper)}>
-      <div className={classNames(style.content)}>
-        <NavSection style={style}/>
-        <div className={classNames(style.info)}>
-          <div className={classNames(style.newsletter)}>
-            <label htmlFor='email'>Newsletter</label>
-            <input
-              id='email'
-              type='email'
-              name='email'
-              placeholder='Email Address'
-              autoComplete='true'
-            />
+    <footer className={classNames(styles.contentWrapper)}>
+      <div className={classNames(styles.content)}>
+        <Nav styles={styles} />
+        <div className={classNames(styles.info)}>
+          <div className={classNames(styles.newsletter)}>
+            <h3>Newsletter</h3>
+            <div className={classNames(styles.newsletterEmailInput)}>
+              <input
+                id='email'
+                type='email'
+                name='email'
+                placeholder='Email Address'
+                autoComplete='true'
+              />
+              <svg
+                width='6'
+                height='9'
+                viewBox='0 0 6 9'
+                stroke='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  d='M4.6 4.50023L0.75 8.23356L1.33333 8.81689L5.65 4.50023L1.33333 0.183563L0.75 0.766896L4.6 4.50023Z'
+                  fill='#888888'
+                />
+              </svg>
+            </div>
           </div>
-          <div className={classNames('flex', style.socialLinks)}>
+          <div className={classNames('flex', styles.socialLinks)}>
             <div>
               <a href='https://www.instagram.com'>
                 <svg
@@ -48,13 +62,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className={classNames(style.metaInfo)}>
-          <div>
-            <p>United States | English</p>
-          </div>
-          <div>
-            <p>Patek Philippe © 2021</p>
-          </div>
+        <div className={classNames(styles.metaInfo)}>
+          <p>United States | English</p>
+          <p>Patek Philippe © 2021</p>
         </div>
       </div>
     </footer>

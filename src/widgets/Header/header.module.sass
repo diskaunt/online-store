@@ -2,18 +2,21 @@
 
 $gap: 17px
 
-.header
-	border-bottom: 1px solid var(--black-25)
-
 .contentWrapper
+	position: sticky
+	top: 0
+	border-bottom: 1px solid var(--black-25)
+	background: var(--color-background)
+
+.content
 	max-width: 320px
-	width: full
+	width: 100%
 	margin: auto
 	display: flex
 	justify-content: space-between
 	padding: 10px
-	text-transform: uppercase
 	overflow: hidden
+	text-transform: uppercase
 
 .logo
 	margin-left: 55px
@@ -40,9 +43,12 @@ $gap: 17px
 	span
 		display: none
 
+.utilityMenuButton
+	text-transform: uppercase
+
 @media ( min-width:	640px )
 	$gap: 27px
-	.contentWrapper
+	.content
 		max-width: 640px
 		padding: 20px
 
@@ -60,11 +66,13 @@ $gap: 17px
 
 @media (min-width: 1024px)
 	$gap: 40px
-	.contentWrapper
+	.content
 		max-width: 1024px
 
 	.logo
 		order: -1
+		width: 60px
+		height: 60px
 		margin-left: 0
 
 	.burger
@@ -90,12 +98,15 @@ $gap: 17px
 
 @media (min-width: 1600px)
 	$gap: 40px
-	.contentWrapper
+	.content
 		max-width: 1600px
 		padding: 20px
 
 	.logo
 		margin-right: 69px
+
+	.nav
+		margin-left: 0
 
 	.navList
 		display: flex
@@ -105,3 +116,6 @@ $gap: 17px
 	.utilityMenuList
 		align-items: center
 		gap: $gap
+
+	.utilityMenuItem:first-child
+		display: block

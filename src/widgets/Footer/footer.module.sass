@@ -2,13 +2,13 @@
 
 .contentWrapper
 	width: full
-	padding: 96px 10px 36px
 
 .content
 	max-width: 320px
 	display: grid
 	grid-template: repeat(2,auto) / repeat(2,auto)
 	margin: auto
+	padding: 96px 10px 36px
 	row-gap: 44px
 	@include text16px
 	text-transform: uppercase
@@ -26,7 +26,7 @@
 	justify-content: space-between
 	text-transform: uppercase
 	text-align: start
-	& > span
+	& > h3
 		justify-self: start
 	& > svg
 		flex-shrink: 0
@@ -35,20 +35,33 @@
 		transform: rotate(0deg)
 		transition: transform 0.3s ease-in-out
 
-.navItems
-	display: none
-	text-decoration: none
-	@include text12px
+.navItem
+	width: 100%
 
-.active .navTitle > svg
-	transform: rotate(45deg)
-
-.active .navItems
-	display: block
+.navLinks
 	display: flex
 	flex-flow: column nowrap
+	width: max-content
+	max-height: 0
+	margin: 0
+	gap: 0
+	overflow-y: hidden
+	@include text12px
+	color: var(--black-white-50)
+	text-transform: capitalize
+	transition: all 0.3s ease-in-out
+
+.navLink:hover
+	color: var(--color-foreground)
+
+.navItemActive .navLinks
+	max-height: 117px
+	margin-top: 12px
+	margin-bottom: 5px
 	gap: 3px
-	margin-top: 20px
+
+.navItemActive .navTitle > svg
+	transform: rotate(45deg)
 
 .info
 	display: flex
@@ -56,8 +69,12 @@
 	gap: 53px
 	width: min-content
 	justify-self: end
+	justify-content: space-between
 
 .newsletter
+	display: flex
+	flex-flow: column nowrap
+	row-gap: 6px
 	width: 140px
 	& label
 		display: block
@@ -70,24 +87,37 @@
 		background-color: transparent
 		@include text12px
 
+.newsletterEmailInput
+	width: 100%
+	position: relative
+
+	&>svg
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+
 .socialLinks
 	justify-content: end
-	gap: 20px
+	stroke: none
+	fill: var(--black-white-50)
+	gap: 24px
 
 .metaInfo
 	width: 100%
 	display: flex
 	justify-content: space-between
+	align-items: end
 	grid-column: span 2
-	text-transform: none
 	@include text12px
+	text-transform: none
 
 @media ( min-width: 640px )
 	.contentWrapper
-		padding: 116px 13px 36px 20px
 
 	.content
 		max-width: 640px
+		padding: 116px 20px 36px
 		row-gap: 10px
 
 	.nav
@@ -95,16 +125,28 @@
 		grid-row: span 2
 		row-gap: 17px
 
+	.navItem
+		width: fit-content
+
+	.navTitle
+		width: 97px
+
+	.navItem:last-child .navTitle
+		width: 160px
+
 	.infoSection
 		justify-self: start
 		gap: 16px
 
 	.newsletter
+		row-gap: 16px
 		width: 280px
 
 	.socialLinks
 		justify-content: start
-		gap: 24px
+
+	.info
+		gap: 6px
 
 	.metaInfo
 		width: 280px
@@ -113,23 +155,49 @@
 
 @media ( min-width: 1024px )
 	.contentWrapper
-		padding: 116px 13px 36px 20px
 
 	.content
-		max-width: 640px
+		max-width: 1024px
+		padding: 156px 20px 36px
 		row-gap: 10px
+		column-gap: 60px
 
 	.nav
-		width: 160px
+		width: 100%
+		flex-flow: row nowrap
 		grid-row: span 2
-		row-gap: 17px
+		column-gap: 71px
+
+	.navItem
+		width: 79px
+
+	.navItem:not(:first-child)
+		margin-right: 21px
+
+	.navItem:last-child .navTitle
+		width: 97px
+
+		.navTitle
+		cursor: auto
+
+	.navTitle > svg
+		visibility: hidden
+
+	.navLinks
+		max-height: fit-content
+		margin-top: 20px
+		gap: 6px
 
 	.infoSection
 		justify-self: start
 		gap: 16px
 
+	.info
+		gap: 10px
+
 	.newsletter
-		width: 280px
+		row-gap: 39px
+		width: 322px
 
 	.socialLinks
 		justify-content: start
@@ -137,3 +205,28 @@
 
 	.metaInfo
 		grid-column: span 1
+		width: 322px
+
+@media ( min-width: 1600px )
+
+	.content
+		max-width: 1600px
+
+	.nav
+		column-gap: 122px
+
+	.navItem
+		width: 79px
+
+	.navItem:not(:first-child)
+		margin: 0
+
+	.navItem:last-child .navTitle
+		text-wrap: nowrap
+
+	.newsletter
+		row-gap: 30px
+		width: 360px
+
+	.metaInfo
+		width: 360px
